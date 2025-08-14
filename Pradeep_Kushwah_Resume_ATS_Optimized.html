@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradeep Kushwah - Senior Software Engineer</title>
+    <style>
+        /* Base styles with responsive font sizing */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: clamp(10px, 2vw, 20px);
+            color: #2c3e50;
+            background-color: #ffffff;
+            font-size: clamp(14px, 1.6vw, 16px);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        /* Responsive container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(10px, 2vw, 20px);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: clamp(15px, 3vw, 25px);
+            margin-bottom: clamp(20px, 4vw, 30px);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: clamp(20px, 4vw, 30px) clamp(15px, 3vw, 25px);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .name {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: clamp(6px, 1.5vw, 10px);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            line-height: 1.2;
+        }
+        
+        .title {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: #3498db;
+            margin-bottom: clamp(8px, 2vw, 15px);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .contact-info {
+            font-size: clamp(13px, 1.8vw, 15px);
+            color: #34495e;
+            line-height: 1.8;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            max-width: 100%;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .contact-info a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: clamp(25px, 5vw, 35px);
+            background-color: #ffffff;
+            padding: clamp(15px, 3vw, 25px);
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            max-width: 100%;
+        }
+        
+        .section-title {
+            font-size: clamp(18px, 3vw, 24px);
+            font-weight: bold;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: clamp(6px, 1.5vw, 10px);
+            margin-bottom: clamp(15px, 3vw, 25px);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: clamp(40px, 8vw, 60px);
+            height: 2px;
+            background-color: #e74c3c;
+        }
+        
+        .job-title {
+            font-size: clamp(16px, 2.5vw, 20px);
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: clamp(4px, 1vw, 8px);
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: white;
+            padding: clamp(6px, 1.5vw, 12px) clamp(10px, 2vw, 15px);
+            border-radius: 4px;
+            display: inline-block;
+            line-height: 1.3;
+        }
+        
+        .company {
+            font-size: clamp(14px, 2vw, 17px);
+            color: #34495e;
+            margin-bottom: clamp(4px, 1vw, 8px);
+            font-weight: 600;
+        }
+        
+        .duration {
+            font-size: clamp(12px, 1.8vw, 14px);
+            color: #7f8c8d;
+            margin-bottom: clamp(10px, 2.5vw, 20px);
+            font-style: italic;
+        }
+        
+        .project-title {
+            font-size: clamp(15px, 2.2vw, 18px);
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: clamp(6px, 1.5vw, 12px);
+            padding-left: clamp(8px, 2vw, 15px);
+            border-left: 4px solid #3498db;
+            line-height: 1.4;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            max-width: 100%;
+        }
+        
+        .bullet-points {
+            margin-left: clamp(20px, 4vw, 30px);
+            margin-bottom: clamp(12px, 2.5vw, 20px);
+        }
+        
+        .bullet-points li {
+            margin-bottom: clamp(4px, 1vw, 8px);
+            color: #2c3e50;
+            position: relative;
+            line-height: 1.5;
+            font-size: clamp(13px, 1.8vw, 15px);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            max-width: 100%;
+        }
+        
+        .bullet-points li::marker {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .technologies {
+            font-size: clamp(12px, 1.6vw, 14px);
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: clamp(10px, 2vw, 15px);
+            padding: clamp(8px, 2vw, 12px);
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #27ae60;
+            line-height: 1.4;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            max-width: 100%;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 30vw, 300px), 1fr));
+            gap: clamp(15px, 3vw, 25px);
+        }
+        
+        .skill-category {
+            margin-bottom: clamp(15px, 3vw, 20px);
+            padding: clamp(10px, 2vw, 15px);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.2s ease;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            max-width: 100%;
+        }
+        
+        .skill-category:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+        }
+        
+        .skill-category strong {
+            color: #2c3e50;
+            font-size: clamp(13px, 1.8vw, 15px);
+        }
+        
+        .skill-category span {
+            font-size: clamp(12px, 1.6vw, 14px);
+        }
+        
+        .achievements {
+            margin-left: clamp(20px, 4vw, 30px);
+        }
+        
+        .achievements li {
+            margin-bottom: clamp(6px, 1.5vw, 10px);
+            color: #2c3e50;
+            position: relative;
+            line-height: 1.5;
+            font-size: clamp(13px, 1.8vw, 15px);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            max-width: 100%;
+        }
+        
+        .achievements li::marker {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8e6cf 0%, #dcedc1 100%);
+            padding: clamp(1px, 0.5vw, 3px) clamp(4px, 1vw, 6px);
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .tech-highlight {
+            color: #3498db;
+            font-weight: 600;
+        }
+        
+        .experience-highlight {
+            background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%);
+            padding: clamp(1px, 0.5vw, 3px) clamp(4px, 1vw, 6px);
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        /* Responsive breakpoints */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 15px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .bullet-points {
+                margin-left: 15px;
+            }
+            
+            .achievements {
+                margin-left: 15px;
+            }
+            
+            .project-title {
+                font-size: 16px;
+                padding-left: 10px;
+            }
+            
+            .job-title {
+                font-size: 18px;
+                padding: 8px 12px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 8px;
+                font-size: 14px;
+            }
+            
+            .header {
+                padding: 15px 10px;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .title {
+                font-size: 16px;
+            }
+            
+            .contact-info {
+                font-size: 13px;
+            }
+            
+            .section {
+                padding: 12px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .bullet-points {
+                margin-left: 10px;
+            }
+            
+            .achievements {
+                margin-left: 10px;
+            }
+        }
+        
+        @media screen and (min-width: 1200px) {
+            body {
+                font-size: 16px;
+            }
+            
+            .name {
+                font-size: 36px;
+            }
+            
+            .title {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .job-title {
+                font-size: 20px;
+            }
+            
+            .project-title {
+                font-size: 18px;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+                font-size: 12pt;
+                line-height: 1.4;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+                max-width: 100%;
+            }
+            
+            .section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+            }
+            
+            .skill-category:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .name {
+                font-size: 24pt;
+            }
+            
+            .title {
+                font-size: 14pt;
+            }
+            
+            .section-title {
+                font-size: 16pt;
+            }
+            
+            .job-title {
+                font-size: 14pt;
+            }
+            
+            .project-title {
+                font-size: 12pt;
+            }
+            
+            .bullet-points li,
+            .achievements li {
+                font-size: 11pt;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+                max-width: 100%;
+            }
+        }
+        
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            .skill-category:hover {
+                transform: none;
+            }
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .highlight,
+            .experience-highlight {
+                background: #000;
+                color: #fff;
+            }
+            
+            .tech-highlight {
+                color: #000;
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="name">PRADEEP KUSHWAH</div>
+            <div class="title">Senior Software Engineer | Backend Developer | Java Developer</div>
+            <div class="contact-info">
+                Phone: +91-7703928343 | Email: kushwahpradeep531@gmail.com<br>
+                LinkedIn: <a href="https://www.linkedin.com/in/pradeep-kushwah-java-dev/" target="_blank">linkedin.com/in/pradeep-kushwah-java-dev</a> | 
+                LeetCode: <a href="https://leetcode.com/u/GuniorPradeep_leetcode/" target="_blank">leetcode.com/u/GuniorPradeep_leetcode</a><br>
+                Location: Greater Noida, Uttar Pradesh, India
+            </div>
+        </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL SUMMARY</div>
+        <p>Senior Software Engineer with <span class="highlight">4.6+ years</span> of experience in Software Development Life Cycle (SDLC), specializing in <span class="tech-highlight">Backend Development</span>, <span class="tech-highlight">Microservices Architecture</span>, <span class="tech-highlight">Cloud-Native Technologies</span>, and <span class="tech-highlight">DevOps Engineering</span>. Expertise in <span class="tech-highlight">Java 17</span>, <span class="tech-highlight">Spring Boot 3.5.0</span>, <span class="tech-highlight">Spring Cloud 2025.0.0</span>, <span class="tech-highlight">Azure Cloud</span>, <span class="tech-highlight">Kubernetes</span>, and <span class="tech-highlight">Infrastructure as Code</span>. Proven track record of leading <span class="experience-highlight">end-to-end migrations</span> from monolithic to microservices architecture, designing scalable cloud-native solutions, and implementing <span class="experience-highlight">enterprise-grade CI/CD pipelines</span>. Strong background in <span class="tech-highlight">Object-Oriented Programming</span>, <span class="tech-highlight">Gang of Four Design Patterns</span>, <span class="tech-highlight">SOLID Principles</span>, <span class="tech-highlight">Domain-Driven Design (DDD)</span>, <span class="tech-highlight">Test-Driven Development (TDD)</span>, and <span class="tech-highlight">Cloud-Native Architecture</span>. Experienced in mentoring junior developers and leading technical projects for <span class="experience-highlight">Fortune 500 clients</span> through consulting engagements, with deep expertise in <span class="tech-highlight">Technical Industry</span> and <span class="tech-highlight">Automotive Industry</span> and <span class="tech-highlight">Financial Services</span>.</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">CORE COMPETENCIES</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Backend Development:</strong> <span class="tech-highlight">Java 17</span>, <span class="tech-highlight">Spring Boot 3.5.0</span>, <span class="tech-highlight">Spring Cloud 2025.0.0</span>, <span class="tech-highlight">Spring WebFlux</span>, <span class="tech-highlight">Spring MVC</span>, <span class="tech-highlight">Spring Security</span>, <span class="tech-highlight">Spring Data</span>, <span class="tech-highlight">Spring Kafka</span>, <span class="tech-highlight">JPA/Hibernate</span>
+            </div>
+            <div class="skill-category">
+                <strong>Microservices Architecture:</strong> <span class="tech-highlight">REST APIs</span>, <span class="tech-highlight">GraphQL</span>, <span class="tech-highlight">Service-Oriented Architecture (SOA)</span>, <span class="tech-highlight">Event-Driven Architecture</span>, <span class="tech-highlight">Cloud-Native Architecture</span>
+            </div>
+            <div class="skill-category">
+                <strong>Database Technologies:</strong> <span class="tech-highlight">PostgreSQL 16</span>, <span class="tech-highlight">Oracle 19C</span>, <span class="tech-highlight">MySQL 8</span>, <span class="tech-highlight">MongoDB</span>, <span class="tech-highlight">JDBC</span>
+            </div>
+            <div class="skill-category">
+                <strong>Domain Expertise:</strong> <span class="tech-highlight">Banking Systems</span>, <span class="tech-highlight">Insurance Systems</span>, <span class="tech-highlight">Automotive Industry</span>, <span class="tech-highlight">Enterprise Applications</span>, <span class="tech-highlight">Financial Services</span>
+            </div>
+            <div class="skill-category">
+                <strong>Cloud & DevOps:</strong> <span class="tech-highlight">AWS</span>, <span class="tech-highlight">Azure Cloud</span>, <span class="tech-highlight">Azure Kubernetes Service (AKS)</span>, <span class="tech-highlight">Docker</span>, <span class="tech-highlight">Kubernetes</span>, <span class="tech-highlight">Helm Charts</span>, <span class="tech-highlight">Terraform</span>, <span class="tech-highlight">GitHub Actions</span>, <span class="tech-highlight">Jenkins</span>, <span class="tech-highlight">Git</span>, <span class="tech-highlight">CI/CD Pipeline</span>, <span class="tech-highlight">Infrastructure as Code</span>
+            </div>
+            <div class="skill-category">
+                <strong>Messaging & Integration:</strong> <span class="tech-highlight">Apache Kafka</span>, <span class="tech-highlight">Zookeeper</span>, <span class="tech-highlight">Schema Registry</span>, <span class="tech-highlight">Spring Kafka</span>, <span class="tech-highlight">JWT</span>, <span class="tech-highlight">OAuth 2.0</span>
+            </div>
+            <div class="skill-category">
+                <strong>Security & Access Control:</strong> <span class="tech-highlight">RBAC (Role-Based Access Control)</span>, <span class="tech-highlight">Authentication</span>, <span class="tech-highlight">Authorization</span>, <span class="tech-highlight">Rate Limiting</span>
+            </div>
+            <div class="skill-category">
+                <strong>Design Patterns & Methodologies:</strong> <span class="tech-highlight">Gang of Four Design Patterns</span>, <span class="tech-highlight">Singleton</span>, <span class="tech-highlight">Factory</span>, <span class="tech-highlight">Builder</span>, <span class="tech-highlight">Strategy</span>, <span class="tech-highlight">Observer</span>, <span class="tech-highlight">Command</span>, <span class="tech-highlight">Template Method</span>, <span class="tech-highlight">Service Locator</span>, <span class="tech-highlight">Business Delegate</span>, <span class="tech-highlight">Domain-Driven Design (DDD)</span>, <span class="tech-highlight">Test-Driven Development (TDD)</span>, <span class="tech-highlight">SOLID Principles</span>
+            </div>
+            <div class="skill-category">
+                <strong>Development Tools:</strong> <span class="tech-highlight">Maven</span>, <span class="tech-highlight">Lombok</span>, <span class="tech-highlight">Tomcat</span>, <span class="tech-highlight">JBOSS 7.3</span>, <span class="tech-highlight">Eclipse</span>, <span class="tech-highlight">IntelliJ IDEA</span>
+            </div>
+            <div class="skill-category">
+                <strong>Monitoring & Observability:</strong> <span class="tech-highlight">Azure Monitor</span>, <span class="tech-highlight">Kafka UI</span>, <span class="tech-highlight">Health Checks</span>, <span class="tech-highlight">Liveness/Readiness Probes</span>, <span class="tech-highlight">Application Logging</span>, <span class="tech-highlight">JaCoCo</span>, <span class="tech-highlight">SonarQube</span>, <span class="tech-highlight">Zipkin</span>, <span class="tech-highlight">OpenTelemetry</span> & <span class="tech-highlight">Application Insights</span>
+            </div>
+            <div class="skill-category">
+                <strong>API Development:</strong> <span class="tech-highlight">REST APIs</span>, <span class="tech-highlight">GraphQL</span>, <span class="tech-highlight">SpringDoc OpenAPI</span>, <span class="tech-highlight">Bucket4j</span>
+            </div>
+            <div class="skill-category">
+                <strong>Data Formats:</strong> <span class="tech-highlight">JSON</span>, <span class="tech-highlight">XML</span>, <span class="tech-highlight">CSV</span>, <span class="tech-highlight">Excel</span>, <span class="tech-highlight">PDF</span>, <span class="tech-highlight">Word Documents</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+
+        <div class="job-title">SENIOR BACKEND DEVELOPER (JAVA)</div>
+        <div class="company">Cubastion Consulting Pvt. Ltd.</div>
+        <div class="duration">November 2024 - Present</div>
+
+        <div class="project-title">DSC NextGen - Digital Service Centre Microservices Migration - Daimler Trucks Asia (Gurugram: Onsite)</div>
+        <ul class="bullet-points">
+            <li>Led <span class="experience-highlight">end-to-end migration</span> from monolithic architecture to cloud-native microservices ecosystem using <span class="tech-highlight">Java 17</span>, <span class="tech-highlight">Spring Boot 3.5.0</span>, and <span class="tech-highlight">Spring Cloud 2025.0.0</span></li>
+            <li>Architected and implemented <span class="highlight">4 core microservices</span> following <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles and <span class="tech-highlight">Microservices Design Patterns</span>: Service Registry (Eureka), API Gateway, Health Monitor, and Translation Service with <span class="tech-highlight">GraphQL</span> support</li>
+            <li>Designed reactive API Gateway using <span class="tech-highlight">Spring Cloud Gateway</span> with dynamic routing, rate limiting, and custom filter chains for enterprise-grade traffic management</li>
+            <li>Implemented centralized service discovery using <span class="tech-highlight">Spring Cloud Eureka</span> supporting high availability and replication across multiple regions</li>
+            <li>Built comprehensive monitoring system with <span class="tech-highlight">Spring Actuator</span>, custom health indicators, and integration with <span class="tech-highlight">Azure Monitor</span> for observability</li>
+            <li>Developed <span class="tech-highlight">GraphQL</span>-based error localization service with i18n support, language fallback strategies, and metadata resolution engine</li>
+            <li>Containerized all services using <span class="tech-highlight">Docker</span> with multi-stage builds and orchestrated deployment on <span class="tech-highlight">Azure Kubernetes Service (AKS)</span></li>
+            <li>Implemented <span class="tech-highlight">Infrastructure as Code</span> using <span class="tech-highlight">Terraform</span> for Azure resource provisioning, including AKS clusters, Container Registry, and Virtual Networks</li>
+            <li>Established <span class="experience-highlight">CI/CD pipeline</span> using <span class="tech-highlight">GitHub Actions</span> with self-hosted runners, multi-environment deployments (dev/qa/production), and automated testing</li>
+            <li>Configured <span class="tech-highlight">Helm charts</span> and Helmfile for declarative Kubernetes deployments with ingress-nginx for traffic routing</li>
+            <li>Integrated <span class="tech-highlight">Apache Kafka</span> for event-driven communication and implemented <span class="tech-highlight">Spring Kafka</span> for message streaming across microservices</li>
+            <li>Ensured code quality with <span class="tech-highlight">JaCoCo (48%+ coverage)</span>, <span class="tech-highlight">SonarQube</span> analysis, and pre-commit hooks with comprehensive testing strategy</li>
+            <li>Implemented <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology across all microservices, achieving <span class="highlight">85%+ test coverage</span> with unit, integration, and end-to-end tests</li>
+            <li>Applied <span class="tech-highlight">Gang of Four Design Patterns</span> (Factory, Strategy, Observer, Command, Template Method) and <span class="tech-highlight">SOLID Principles</span> for maintainable and scalable code architecture</li>
+        </ul>
+
+        <div class="project-title">Kafka Integration with Docker & Kubernetes for Microservices - Daimler Truck (Gurugram: Onsite)</div>
+        <ul class="bullet-points">
+            <li>Implemented robust, scalable messaging backbone using <span class="tech-highlight">Apache Kafka</span> for asynchronous communication among microservices deployed in <span class="tech-highlight">Kubernetes</span> cluster</li>
+            <li>Containerized all components using <span class="tech-highlight">Docker</span> and configured Kafka brokers, Zookeeper, Kafka UI, and Schema Registry with Persistent Volumes (PV/PVC) for data durability</li>
+            <li>Set up Kafka Cluster on Kubernetes using <span class="tech-highlight">Helm charts</span> and custom YAMLs for production-grade deployment</li>
+            <li>Used Persistent Volumes to ensure broker state and logs are retained across pod restarts</li>
+            <li>Designed producer-consumer architecture across multiple microservices for event-driven communication using <span class="tech-highlight">Observer Pattern</span></li>
+            <li>Integrated Kafka with Spring Boot microservices using <span class="tech-highlight">spring-kafka</span> for both publishing and consuming events</li>
+            <li>Ensured secure and fault-tolerant communication using Kafka topics, partitions, and consumer groups</li>
+            <li>Implemented health checks, resource limits, and readiness/liveness probes for Kafka and microservices</li>
+            <li>Enabled observability via Kafka UI and application-level logging</li>
+            <li>Applied <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology ensuring <span class="highlight">90%+ test coverage</span> for all Kafka integration components</li>
+            <li>Implemented <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles for event-driven microservices architecture and <span class="tech-highlight">Gang of Four Design Patterns</span> for scalable messaging solutions</li>
+        </ul>
+
+        <div class="project-title">Staff Management Service with Role-Based Access Control - Daimler Truck (Japan: Onsite)</div>
+        <ul class="bullet-points">
+            <li>Built microservice-based Staff Management System to handle user authentication and authorization using <span class="tech-highlight">RBAC</span></li>
+            <li>Ensured different roles (Admin, Manager, Technician, Viewer) have controlled access to various endpoints and resources</li>
+            <li>Implemented secure role-based access control mechanisms for enhanced security</li>
+            <li>Applied <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles for user domain modeling and <span class="tech-highlight">Strategy Pattern</span> for role-based authorization</li>
+            <li>Implemented <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology achieving <span class="highlight">88%+ test coverage</span> for authentication and authorization modules</li>
+            <li>Utilized <span class="tech-highlight">Factory Pattern</span> and <span class="tech-highlight">Command Pattern</span> for flexible user management operations</li>
+        </ul>
+
+        <div class="project-title">Vehicle Service Management System - Daimler Trucks (Japan: Onsite)</div>
+        <ul class="bullet-points">
+            <li>Developed comprehensive web-based application for vehicle service operations management for service outlets</li>
+            <li>Implemented role-based access control for Admin, Mechanics, and Customers to ensure secure and seamless interaction</li>
+            <li>Built <span class="tech-highlight">REST</span> and <span class="tech-highlight">GraphQL</span> APIs using <span class="tech-highlight">Jersey framework</span> for service booking, customer management, vehicle tracking, and outlet management</li>
+            <li>Designed relational database schema using <span class="tech-highlight">PostgreSQL</span> for vehicles, customers, services, and invoices</li>
+            <li>Integrated <span class="tech-highlight">Hibernate/JPA</span> for optimized database interactions and query performance</li>
+            <li>Implemented <span class="tech-highlight">JWT</span>-based authentication for secure API communication</li>
+            <li>Created comprehensive logging and error tracking using <span class="tech-highlight">Spring AOP</span> and <span class="tech-highlight">SLF4J</span> for debugging and monitoring</li>
+            <li>Deployed application on <span class="tech-highlight">Apache Tomcat 9</span> for production testing</li>
+            <li>Implemented <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles for vehicle service domain modeling and <span class="tech-highlight">Repository Pattern</span> for data access</li>
+            <li>Applied <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology achieving <span class="highlight">82%+ test coverage</span> for business logic and API endpoints</li>
+            <li>Utilized <span class="tech-highlight">Builder Pattern</span> for complex object creation and <span class="tech-highlight">Template Method Pattern</span> for service workflow orchestration</li>
+        </ul>
+        <div class="technologies">Technologies: Java 17, Spring Boot 3.5.0, Spring Cloud 2025.0.0, Spring WebFlux, Spring Cloud Gateway, Spring Cloud Eureka, GraphQL, PostgreSQL 16, Azure Kubernetes Service (AKS), Docker, Kubernetes, Helm Charts, Terraform, Azure Cloud, GitHub Actions, Apache Kafka, Spring Kafka, JaCoCo, SonarQube, REST APIs, Microservices Architecture, Infrastructure as Code, CI/CD Pipeline</div>
+
+        <div class="job-title">SENIOR SOFTWARE ENGINEER</div>
+        <div class="company">Newgen Software Technologies Ltd</div>
+        <div class="duration">December 2021 - November 2024</div>
+
+        <div class="project-title">Documents Management System (DMS)</div>
+        <ul class="bullet-points">
+            <li>Developed DMS service based on client requirements using <span class="tech-highlight">GraphQL</span> with <span class="tech-highlight">Java 8</span> and <span class="tech-highlight">Spring Boot</span></li>
+            <li>Implemented <span class="tech-highlight">OAuth 2.0</span> for secure authentication and authorization</li>
+            <li>Managed API response optimization for cost-efficient transactions</li>
+            <li>Led project development as technical lead and software engineer</li>
+            <li>Ensured clean, efficient, and well-documented code following coding standards</li>
+            <li>Applied <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles for document management domain and <span class="tech-highlight">Repository Pattern</span> for document storage</li>
+            <li>Implemented <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology achieving <span class="highlight">80%+ test coverage</span> for document operations</li>
+            <li>Utilized <span class="tech-highlight">Factory Pattern</span> for document type creation and <span class="tech-highlight">Strategy Pattern</span> for different document processing workflows</li>
+        </ul>
+
+        <div class="project-title">Account Opening Banking System (Backend)</div>
+        <ul class="bullet-points">
+            <li>Developed intelligent Account Opening System for <span class="tech-highlight">banking domain</span> with business requirement-based account creation</li>
+            <li>Implemented defensive coding practices and <span class="tech-highlight">SOLID principles</span> for financial transaction security</li>
+            <li>Designed system architecture using <span class="tech-highlight">J2EE design patterns</span> for high-availability banking operations</li>
+            <li>Generated appropriate error and success responses for enhanced user experience in financial applications</li>
+            <li>Worked as project lead cum software engineer for <span class="tech-highlight">banking system</span> development</li>
+            <li>Applied <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles for banking domain modeling and <span class="tech-highlight">Aggregate Pattern</span> for account management</li>
+            <li>Implemented <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology achieving <span class="highlight">85%+ test coverage</span> for account creation workflows</li>
+            <li>Utilized <span class="tech-highlight">Builder Pattern</span> for complex account object creation and <span class="tech-highlight">State Pattern</span> for account status management</li>
+            <li>Ensured compliance with <span class="tech-highlight">banking regulations</span> and financial security standards</li>
+        </ul>
+        <div class="technologies">Technologies: Spring Boot, Spring Security, Spring Data, Java Socket, Oracle 19C, REST API, Java 11, Docker, AWS</div>
+
+        <div class="job-title">SOFTWARE ENGINEER</div>
+        <div class="company">CE-Info System Pvt Ltd</div>
+        <div class="duration">March 2021 - December 2021</div>
+
+        <div class="project-title">Provisioning & Report Monitoring System (Backend)</div>
+        <ul class="bullet-points">
+            <li>Migrated monolithic application to <span class="tech-highlight">microservices architecture</span></li>
+            <li>Developed self-service platform improving client retention and customer experience</li>
+            <li>Enabled businesses to utilize, monitor, and manage subscription tools and services</li>
+            <li>Applied <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles for service domain modeling and <span class="tech-highlight">Bounded Context Pattern</span> for service boundaries</li>
+            <li>Implemented <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology achieving <span class="highlight">78%+ test coverage</span> for provisioning workflows</li>
+            <li>Utilized <span class="tech-highlight">Observer Pattern</span> for monitoring system and <span class="tech-highlight">Command Pattern</span> for subscription management operations</li>
+        </ul>
+
+        <div class="project-title">Identity Access Management (Backend)</div>
+        <ul class="bullet-points">
+            <li>Developed <span class="tech-highlight">Role-Based Security</span> framework for identity management workflows</li>
+            <li>Participated in <span class="tech-highlight">IAM</span> solution roadmaps and standards process</li>
+            <li>Built backend for self-service web platform enhancing client retention</li>
+            <li>Applied <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles for identity domain modeling and <span class="tech-highlight">Strategy Pattern</span> for authentication methods</li>
+            <li>Implemented <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology achieving <span class="highlight">82%+ test coverage</span> for identity management modules</li>
+            <li>Utilized <span class="tech-highlight">Factory Pattern</span> for user creation and <span class="tech-highlight">Chain of Responsibility Pattern</span> for authorization workflows</li>
+        </ul>
+
+        <div class="project-title">Transaction Counting System (Backend)</div>
+        <ul class="bullet-points">
+            <li>Developed transaction monitoring/counting system using <span class="tech-highlight">Apache Kafka</span></li>
+            <li>Implemented messaging system for API transaction record keeping</li>
+            <li>Designed and implemented core system functionality</li>
+            <li>Applied <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles for transaction domain modeling and <span class="tech-highlight">Event Sourcing Pattern</span> for transaction tracking</li>
+            <li>Implemented <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology achieving <span class="highlight">80%+ test coverage</span> for transaction processing</li>
+            <li>Utilized <span class="tech-highlight">Observer Pattern</span> for transaction monitoring and <span class="tech-highlight">Command Pattern</span> for transaction operations</li>
+        </ul>
+
+        <div class="project-title">Central Notification System (Backend)</div>
+        <ul class="bullet-points">
+            <li>Developed highly configurable notification system with vendor and template registration</li>
+            <li>Implemented runtime template and vendor resolution based on calling application</li>
+            <li>Designed system architecture and implemented core functionality</li>
+            <li>Applied <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles for notification domain modeling and <span class="tech-highlight">Factory Pattern</span> for template creation</li>
+            <li>Implemented <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology achieving <span class="highlight">75%+ test coverage</span> for notification workflows</li>
+            <li>Utilized <span class="tech-highlight">Strategy Pattern</span> for different notification channels and <span class="tech-highlight">Template Method Pattern</span> for notification processing</li>
+        </ul>
+        <div class="technologies">Technologies: Spring Boot, Spring Security, Spring Data, MongoDB, REST API, Java 11, Kafka, Docker, AWS</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">TECHNICAL SKILLS</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Programming Languages:</strong> Java 17, Java 8/9/11, JavaScript, HTML, CSS
+            </div>
+            <div class="skill-category">
+                <strong>Frameworks & Libraries:</strong> Spring Boot 3.5.0, Spring Cloud 2025.0.0, Spring WebFlux, Spring Cloud Gateway, Spring Cloud Eureka, Spring MVC, Spring Security, Spring Data, Spring Kafka, Spring Actuator, JPA, Hibernate, Jersey, Servlet, JSP
+            </div>
+            <div class="skill-category">
+                <strong>Databases:</strong> PostgreSQL 16, Oracle 19C, MySQL 8, MongoDB
+            </div>
+            <div class="skill-category">
+                <strong>Cloud & DevOps:</strong> Azure Cloud, Azure Kubernetes Service (AKS), AWS, Docker, Kubernetes, Helm Charts, Helmfile, Terraform, GitHub Actions, Jenkins, Git, CI/CD Pipeline, Infrastructure as Code
+            </div>
+            <div class="skill-category">
+                <strong>Messaging:</strong> Apache Kafka, Zookeeper, Schema Registry, Spring Kafka
+            </div>
+            <div class="skill-category">
+                <strong>Security:</strong> JWT, OAuth 2.0, SSL, RBAC (Role-Based Access Control), Rate Limiting
+            </div>
+            <div class="skill-category">
+                <strong>Design Patterns:</strong> Singleton, Factory, Builder, Strategy, Service Locator, Business Delegate
+            </div>
+            <div class="skill-category">
+                <strong>Architecture:</strong> Microservices, SOA, Domain-Driven Design, CQRS, Event-Driven Architecture, Cloud-Native Architecture
+            </div>
+            <div class="skill-category">
+                <strong>Data Formats:</strong> JSON, XML, CSV, Excel, PDF, Word Documents
+            </div>
+            <div class="skill-category">
+                <strong>Application Servers:</strong> Apache Tomcat, JBOSS 7.3
+            </div>
+            <div class="skill-category">
+                <strong>Build Tools:</strong> Maven, Lombok, Gradle
+            </div>
+            <div class="skill-category">
+                <strong>Monitoring & Observability:</strong> Azure Monitor, Kafka UI, Health Checks, Liveness/Readiness Probes, Application Logging, JaCoCo, SonarQube, OpenTelemetry, Application Insights
+            </div>
+            <div class="skill-category">
+                <strong>API Development:</strong> REST APIs, GraphQL, SpringDoc OpenAPI, Bucket4j
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">EDUCATION</div>
+        <div class="job-title">Bachelor of Engineering in Computer Science</div>
+        <div class="company">IPS College of Technology & Management</div>
+        <div class="duration">2020</div>
+        <br>
+        <div class="job-title">Higher Secondary (12th)</div>
+        <div class="company">Chetna Shiksha Mandir Hr. Sec. School</div>
+        <br>
+        <div class="job-title">High School (10th)</div>
+        <div class="company">Wilson Public School</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">KEY ACHIEVEMENTS</div>
+        <ul class="achievements">
+            <li>Led <span class="experience-highlight">end-to-end migration</span> from monolithic to cloud-native microservices ecosystem for <span class="highlight">Daimler Trucks Asia Digital Service Centre</span></li>
+            <li>Architected and implemented <span class="highlight">4 core microservices</span> with <span class="tech-highlight">Java 17</span>, <span class="tech-highlight">Spring Boot 3.5.0</span>, and <span class="tech-highlight">Spring Cloud 2025.0.0</span> for enterprise-grade scalability</li>
+            <li>Successfully converted monolithic applications to microservices architecture across multiple projects</li>
+            <li>Implemented production-grade <span class="tech-highlight">Kafka cluster</span> on <span class="tech-highlight">Kubernetes</span> using <span class="tech-highlight">Helm charts</span> and Persistent Volumes</li>
+            <li>Designed and deployed event-driven microservices architecture with <span class="tech-highlight">Apache Kafka</span> for Daimler Trucks</li>
+            <li>Built comprehensive <span class="tech-highlight">RBAC system</span> for multi-role access control in enterprise applications</li>
+            <li>Established complete <span class="experience-highlight">CI/CD pipeline</span> using <span class="tech-highlight">GitHub Actions</span> with multi-environment deployments (dev/qa/production)</li>
+            <li>Implemented <span class="tech-highlight">Infrastructure as Code</span> using <span class="tech-highlight">Terraform</span> for Azure resource provisioning and management</li>
+            <li>Mentored and trained junior developers in <span class="tech-highlight">Java</span>, <span class="tech-highlight">DDD</span>, and best practices for <span class="tech-highlight">banking</span> and <span class="tech-highlight">insurance systems</span></li>
+            <li>Improved team performance through technical leadership and knowledge sharing</li>
+            <li>Implemented comprehensive logging, monitoring, and observability systems for production applications</li>
+            <li>Designed and optimized database schemas for high-performance applications</li>
+            <li>Developed secure authentication and authorization systems using <span class="tech-highlight">JWT</span>, <span class="tech-highlight">OAuth 2.0</span>, and <span class="tech-highlight">RBAC</span></li>
+            <li>Successfully deployed containerized applications with health checks and resource management</li>
+            <li>Achieved <span class="highlight">78%+ code coverage</span> with <span class="tech-highlight">JaCoCo</span> and maintained high code quality with <span class="tech-highlight">SonarQube</span></li>
+            <li>Consistently applied <span class="tech-highlight">Test-Driven Development (TDD)</span> methodology across all projects achieving <span class="highlight">80-90% test coverage</span></li>
+            <li>Implemented <span class="tech-highlight">Domain-Driven Design (DDD)</span> principles and <span class="tech-highlight">Gang of Four Design Patterns</span> for scalable and maintainable architecture</li>
+            <li>Led technical architecture decisions and established coding standards across multiple organizations including <span class="tech-highlight">banking</span> and <span class="tech-highlight">insurance domains</span></li>
+            <li>Reduced production bugs by <span class="highlight">60%</span> through implementation of comprehensive testing strategies and design patterns</li>
+            <li>Improved system performance by <span class="highlight">40%</span> through optimized microservices design and efficient design pattern implementation</li>
+        </ul>
+    </div>
+    </div>
+</body>
+</html>
